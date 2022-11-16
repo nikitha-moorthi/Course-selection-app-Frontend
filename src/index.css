@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: url('Pictures/background.jpg');
+  background-size: cover;
+ 
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.banner {
+  padding: 5px;
+  color: aliceblue;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: larger;
+  background: url('Pictures/banner2.jpg');
+  background-repeat:no-repeat;  
+  height: 100px;  
+}
+
+
+
+.footer{
+  position: absolute;
+  bottom: 5px;
+  margin-left: 700px;
+  color: blue;
+  font-weight: bold;
+}
+
+.mainLogin{
+  margin-top: 0px;
+  background: url('Pictures/frontpage.jpg');
+  background-size: cover;
+  height: 660px;
+
+}
+
+.logout{
+  margin-right: 0px;;
+}
+
+
+.login-title {
+  margin-top: 50px;
+  text-align: left;
+}
+
+.error{
+  color: red;
+  font-weight: bold;
+}
+
+.success{
+  color: green;
+  font-weight: bold;
+
+}
+
+.link {
+  text-decoration: none;
+  color:white;
+  right: 5px;
+  margin-right: 5px;;
+  margin-top: 0px;
+  font-weight: bold;
+  font-size: larger;
+  position: absolute;  
+}
