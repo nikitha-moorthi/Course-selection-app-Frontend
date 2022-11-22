@@ -10,11 +10,11 @@ const UpdateAdmissionStatus = () => {
     const [message , setMessage] = useState(""); 
     const [admission, setAdmission] = useState({admissionId:"", applicant: {} , course: {},admissionDate:"", status:""});
     
-    const [ admissionId, setAdmissionId] = useState("");
+    /*const [ admissionId, setAdmissionId] = useState("");
     const [ applicant, setApplicant] = useState("");
     const [ course, setCourse] = useState("");
     const [ admissionDate, setAdmissionDate] = useState("");
-    const [ status, setStatus] = useState("");
+    const [ status, setStatus] = useState("");  */
 
     const {register, handleSubmit, formState: {errors}} = useForm();
 
@@ -36,13 +36,12 @@ const UpdateAdmissionStatus = () => {
             document.getElementById('courseId').value = response.data.course.courseId;
             document.getElementById('admissionDate').value = response.data.admissionDate;
             document.getElementById('status').value = response.data.status; 
-            setAdmissionId(response.data.admissionId);
-            setApplicant(response.data.applicant.applicantId);
-            setCourse(response.data.course.courseId);
-            setAdmissionDate(response.data.admissionDate);
-            setStatus(response.data.status);
+            //setAdmissionId(response.data.admissionId);
+            //setApplicant(response.data.applicant.applicantId);
+            //setCourse(response.data.course.courseId);
+            //setAdmissionDate(response.data.admissionDate);
+            //setStatus(response.data.status);
             console.log(response.data);
-
 
         }).catch(e => console.log("Exception while updating Status info "+e));
     },[]);
@@ -53,12 +52,12 @@ const UpdateAdmissionStatus = () => {
         <div>
             <Menu/>
             <div className="container w-25 bg-primary form rounded p-5">
-                <h4>Update Admission Status</h4>  
+                <h4><b>Update Admission Status</b></h4>  
                 <span className='success'>{message}</span>
                 <form onSubmit={handleSubmit(updateAdmissionStatus)}> 
                     <div className="row">
                         <div className="col">
-                            <label htmlFor="">Admission ID: </label>
+                            <label>Admission ID: </label>
                             <input 
                                 className="form-control" 
                                 type="number" readOnly
@@ -70,7 +69,7 @@ const UpdateAdmissionStatus = () => {
                     </div>
                     <div className="row">
                         <div className="col">
-                            <label htmlFor="">Applicant ID: </label>
+                            <label>Applicant ID: </label>
                             <input 
                                 className="form-control" 
                                 type="number" readOnly
@@ -82,7 +81,7 @@ const UpdateAdmissionStatus = () => {
                     </div>
                     <div className="row">
                         <div className="col">
-                            <label htmlFor="">Course ID: </label>
+                            <label>Course ID: </label>
                             <input 
                                 className="form-control" 
                                 type="number"  readOnly
@@ -94,7 +93,7 @@ const UpdateAdmissionStatus = () => {
                     </div>
                     <div className="row">
                         <div className="col">
-                            <label htmlFor="">Admission Date: </label>
+                            <label>Admission Date: </label>
                             <input 
                                 className="form-control" 
                                 type="date" readOnly
@@ -106,7 +105,7 @@ const UpdateAdmissionStatus = () => {
                     </div>
                     <div className="row">
                         <div className="col">
-                            <label htmlFor="">Admission Status: </label>
+                            <label>Admission Status: </label>
                             <select 
                             className="form-control" { ...register("status", {required: true }) } >
                                 <option value="">----Select----</option>

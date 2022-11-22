@@ -3,18 +3,15 @@ import { useParams } from "react-router-dom";
 import AdminService from "../Services/AdminService";
 import Menu from "./Menu";
 
-
-
 const DeleteAdmin = () => {
     const { id } = useParams();
     const [message, setMessage] = useState();
 
     useEffect(() => {
         AdminService.deleteAdmin(id).then(response => {
-            console.log(response);
-            if (response.status === 200) {
+            if (response.status === 204) {
                 console.log("Deleted Admin Successfully. Admin ID :: " + id);
-                setMessage("Deleted AdminId "+ id +" Successfully.");
+                setMessage("Deleted AdminId: "+ id +" Successfully.");
             }
         }).catch(e => console.log("Exception while deleteing Admin. Admin Id:: " + id))
     }, []);

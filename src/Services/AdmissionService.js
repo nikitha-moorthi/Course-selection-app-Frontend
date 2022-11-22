@@ -32,19 +32,6 @@ class AdmissionService {
     getAdmissionByApplicantID(applicantid){
         return axios.get(apiPath+'/admissions/applicant/'+applicantid);
     }
-    /*
-    getByStatus(){
-        return axios.get(apiPath+'/admissions/admissionstatus/'+status);
-    }
-
-    getByCourseId(){
-        return axios.get(apiPath+'/admissions/courses/'+courseId);
-    }
-
-    getByDate(){
-        return axios.get(apiPath+'/admissions/date/'+Date);
-    }
-*/
 
 }
 

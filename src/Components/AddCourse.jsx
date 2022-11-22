@@ -15,7 +15,7 @@ const AddCourse = () => {
                 setMessage("Course Added Successfully. Course ID : "+response.data.courseId);
                 
             }
-        })
+        }).catch(e=> setMessage(e.response.data.CourseId));
     }
 
     return(

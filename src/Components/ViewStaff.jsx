@@ -64,6 +64,7 @@ const ViewStaff = () => {
             </div>
             <div className="card-footer p-2">
                   <a className='btn btn-danger' href="/home">Go Back</a>
+                  <a  className="btn btn-success" href = {"/update-staff/"+id} >Update</a>
             </div>
         </div>
       </div>

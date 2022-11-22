@@ -6,6 +6,7 @@ import StaffService from "../Services/StaffService";
 const ViewStaffs = () => {
     const [staff, setStaff] = useState([]);
     const [searchStr, setSearchStr] = useState("");
+    
     let user =localStorage.getItem('userName');
     user = JSON.parse(user);
     let role = user.role;

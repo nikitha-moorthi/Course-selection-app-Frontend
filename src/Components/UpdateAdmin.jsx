@@ -41,16 +41,15 @@ const UpdateAdmin= () => {
         <div>
             <Menu/>
             <div className="container w-25 bg-primary form rounded p-5">
-                <h4>Update Admin</h4>  
+                <h4><b>Update Admin</b></h4>  
                 <span className='success'>{message}</span>
                 <form onSubmit={handleSubmit(updateAdmin)}> 
                     <div className="row">
                         <div className="col">
-                            <label htmlFor="">Admin ID: </label>
+                            <label>Admin ID: </label>
                             <input 
                                 className="form-control" 
                                 type="number"
-                                defaultValue=""
                                 id="adminId"
                                 onChange={(e) => setAdminId(e.target.value)}
                                 { ...register("adminId", {required: true} ) }
@@ -60,7 +59,7 @@ const UpdateAdmin= () => {
                     </div>
                     <div className="row">
                         <div className="col">
-                            <label htmlFor="">Admin Name: </label>
+                            <label>Admin Name: </label>
                             <input 
                                 className="form-control" 
                                 type="text" 
@@ -77,7 +76,7 @@ const UpdateAdmin= () => {
                             <label htmlFor="">Password: </label>
                             <input 
                                 className="form-control" 
-                                type="text" 
+                                type="password" 
                                 id="password"
                                 onChange={(e) => setPassword(e.target.value)}
                                 { ...register("password", {required: true}) }

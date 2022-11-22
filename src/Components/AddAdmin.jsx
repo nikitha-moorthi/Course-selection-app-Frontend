@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import {useForm} from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
 import AdminService from '../Services/AdminService';
 import Menu from './Menu';
 
@@ -20,14 +19,14 @@ const AddAdmin = () => {
 
     return(
         <div className='container'> 
-            <Menu name="Home"/>
+            <Menu />
             <div className="container w-25 bg-primary form rounded p-5">
-                <h4>Add Admin</h4>  
+                <h4><b>Add Admin</b></h4>  
                 <span className='success'>{message}</span>
                 <form onSubmit={handleSubmit(saveAdmin)}> 
                     <div className="row">
                         <div className="col">
-                            <label htmlFor="">Admin Name: </label>
+                            <label >Admin Name: </label>
                             <input 
                                 className="form-control" 
                                 type="text"
@@ -38,7 +37,7 @@ const AddAdmin = () => {
                     </div>
                     <div className="row">
                         <div className="col">
-                            <label htmlFor="">Password: </label>
+                            <label >Password: </label>
                             <input 
                                 className="form-control" 
                                 type="password" 
@@ -49,10 +48,10 @@ const AddAdmin = () => {
                     </div>
                     <div className="row">
                         <div className="col">
-                            <label htmlFor="">Phone Number: </label>
+                            <label>Phone Number: </label>
                             <input 
                                 className="form-control" 
-                                type="text" 
+                                type="number" 
                                 { ...register("adminContact", {required: true,minLength: 10,maxLength: 10}) }
                             />
                             {errors.adminContact && errors.adminContact.type === "required" && <span className='error'>Phone Number is required</span>}

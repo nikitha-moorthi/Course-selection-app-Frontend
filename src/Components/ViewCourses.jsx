@@ -23,12 +23,7 @@ const ViewCourses = () => {
     const search = (e) =>{
         const searchText = e.target.value;
         setSearchStr(searchText);
-        if(searchText.toLowerCase() === 'active'){
-            setSearchStr("true");
-        }
-        if(searchText.toLowerCase() === 'in-active'){
-            setSearchStr("false");
-        }        
+              
     }
     return (
         <div className="container">

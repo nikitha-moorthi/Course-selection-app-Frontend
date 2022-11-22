@@ -26,7 +26,6 @@ class AdminService {
     }
 
     updateAdmissionStatus(id, admission){
-        console.log(id);
         return axios.put(apiPath+"/admins/admissions/"+id ,admission);
 
     }

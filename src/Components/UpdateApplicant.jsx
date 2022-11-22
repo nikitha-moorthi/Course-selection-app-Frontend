@@ -10,7 +10,6 @@ const UpdateApplicant= () => {
     const [message , setMessage] = useState(""); 
     const [applicant, setApplicant] = useState({applicantId: "",applicantName:"",mobileNumber:"",applicantDegree:"",applicantGraduationPercent:"", password: ""});
    
-    const [ role, setRole] = useState("");
     const [ applicantId, setApplicantId] = useState("");
     const [ applicantName, setApplicantName] = useState("");
     const [ mobileNumber, setMobileNumber] = useState("");
@@ -56,7 +55,7 @@ const UpdateApplicant= () => {
                                 className="form-control" 
                                 type="number"
                                 defaultValue=""
-                                id="applicantId"
+                                id="applicantId" readOnly
                                 onChange={(e) => setApplicantId(e.target.value)}
                                 { ...register("applicantId", {required: true} ) }
                             />
@@ -137,7 +136,7 @@ const UpdateApplicant= () => {
                         <div className="col d-flex justify-content-center">
                             <br></br>
                             <button type="submit" className="btn btn-lg btn-dark m-4">Update</button>
-                            <a type="button" className="btn btn-lg btn-dark m-4" href = {"/view-all-applicants" }>Go Back</a>
+                            <a type="button" className="btn btn-lg btn-dark m-4" href = {"/home" }>Go Back</a>
                         </div>
                     </div>
                 </form>

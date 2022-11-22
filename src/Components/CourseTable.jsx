@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 const CourseTable = (props) => {
     const courses = props.courses;
     const searchStr = props.searchStr;
+    
     let user =localStorage.getItem('userName');
     user = JSON.parse(user);
     let role = user.role;

@@ -25,24 +25,21 @@ function AdminLogin () {
                 setErrorMessage("Invalid Admin ID/ Password");
             }
         }).catch(e => {setErrorMessage(e.response.data.AdminId);
-            console.log("Exception while fetching staff info "+e.response.data.AdminId)});
+            console.log("Exception while fetching admin info "+e.response.data.AdminId)});
         
         
     }
     },[loginFormData]);
 
     function SubmitForm  (loginInfo) {
-       
-
         setLoginFormData(loginInfo);
-
-
     }
+
     return (
         <div>
-            <div className="container w-25 login-title" > <h3>Login as Admin</h3>
+            <div className="container w-25 login-title" > 
+                <h3>Login as Admin</h3>
             </div>
-            
 
             <div className="container w-25 border rounded border-dark bg-primary p-5" >
                 <span className='error'>{errorMessage}</span>
@@ -50,7 +47,7 @@ function AdminLogin () {
                     <label >Admin Id: </label>
                     <input 
                         className="form-control" 
-                        type="text"  
+                        type="number"  
                         { ...register("adminId", {required: true})}
                      />
                      { errors.adminId && errors.adminId.type === 'required' && <span className='error'>Admin Id is required</span>}

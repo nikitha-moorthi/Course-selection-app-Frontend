@@ -20,7 +20,7 @@ const UpdateCourse = () => {
             if(response.status === 200){
                 setMessage("Course Updated Successfully");
             }
-        })
+        }).catch(e=> setMessage(e.response.data.CourseId));
     }
     useEffect(() => {
         CoursesService.getCourse(id).then(response => {

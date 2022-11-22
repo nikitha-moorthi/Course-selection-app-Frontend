@@ -77,8 +77,10 @@ const ApplicantRegister = () => {
                             <input
                                 className="form-control"
                                 type="number"
-                                {...register("applicantGraduationPercent", { required: true })}
+                                {...register("applicantGraduationPercent", { required: true, min: 0, max: 100 })}
                             />
+                            {errors.applicantGraduationPercent && errors.applicantGraduationPercent.type === "min" && <span className='error'>Must be greater than 0</span>}
+                            {errors.applicantGraduationPercent && errors.applicantGraduationPercent.type === "max" && <span className='error'>Must be less than 100</span>}
                             {errors.applicantGraduationPercent && errors.applicantGraduationPercent.type === "required" && <span className='error'>Percentage is required</span>}
                         </div>
                     </div>

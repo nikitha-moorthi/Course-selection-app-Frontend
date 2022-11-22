@@ -1,12 +1,12 @@
-import photo from '../Pictures/banner.jpg';
+import photo from '../Pictures/profile-picture.jpg';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-
 import Menu from './Menu';
 import AdminService from '../Services/AdminService';
+
 const ViewAdmin = () => {
     const {id} = useParams();
-    const [Admin, setAdmin] = useState({});
+    const [admin, setAdmin] = useState({});
 
     useEffect(() => {
         AdminService.getAdmin(id).then(response => {
@@ -19,8 +19,8 @@ const ViewAdmin = () => {
         <Menu />
       <div className="container w-25 pt-5">
         <div className="card">
-            <div className="card-header">
-                <h4>{Admin.adminId}</h4>
+            <div className="card-header bg-warning ">
+                <h4>{admin.adminId}</h4>
             </div>
             <div className="card-body">
                 <img src={photo} alt="photo" className="card-img-top rounded-circle employee-photo" />
@@ -49,16 +49,16 @@ const ViewAdmin = () => {
                                 <td>
                                 <table>
                                         <tr>
-                                            <td>{Admin.adminId}</td>
+                                            <td>{admin.adminId}</td>
                                         </tr>
                                         <tr>
-                                            <td>{Admin.adminName}</td>
+                                            <td>{admin.adminName}</td>
                                         </tr>
                                         <tr>
-                                            <td>{Admin.password}</td>
+                                            <td>{admin.password}</td>
                                         </tr>
                                         <tr>
-                                            <td>{Admin.adminContact}</td>
+                                            <td>{admin.adminContact}</td>
                                         </tr>
                                     </table>
                                 </td>

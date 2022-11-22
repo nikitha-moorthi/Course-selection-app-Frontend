@@ -12,7 +12,7 @@ const DeleteStaff = () => {
     useEffect(() => {
         StaffService.deleteStaff(id).then(response => {
             console.log(response);
-            if (response.status === 200) {
+            if (response.status === 204) {
                // console.log("Deleted Staff Successfully. Staff ID :: " + id);
                 setMessage("Deleted Staff Successfully. Staff Id::" + id);
             }

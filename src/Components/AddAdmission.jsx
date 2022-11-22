@@ -10,14 +10,11 @@ const AddAdmission =()=>{
     let [message, setMessage] = useState("");
     const [courses, setCourses] = useState([]);
     let { register, handleSubmit, formState: {errors}} = useForm();
-    let [c, setC] = useState("");
 
-    
     useEffect(() => {
         CoursesService.getAllCourses().then(response => {
            console.log(response.data);
             setCourses(response.data);
-            setC(response.data[0].courseId);
             
         }).catch( error => [
             console.log("Error while fetching courses info "+error)
@@ -26,10 +23,7 @@ const AddAdmission =()=>{
     },[]);
         
     const SubmitForm=(admission)=>{
-       /* const courseObj = courses.filter(course => course.courseId == admission.course);
-        admission.course = courseObj[0];
-        console.log(admission);
-        */
+       
         AdmissionService.saveAdmission(admission).then(response => {
             if(response.status === 201){
                 setMessage("Applied Successfully");
@@ -87,15 +81,3 @@ const AddAdmission =()=>{
     )
 }
 export default AddAdmission;
-/*
-   
-
- <label> Course Id: </label>
-                    <input 
-                        className="form-control" 
-                        type="number" 
-                        { ...register("course", {required: true})}
-                    />
-                     { errors.course && errors.course.type === 'required' && <span className='error'>Course Id is required</span>}
-                     <br></br>
-*/
